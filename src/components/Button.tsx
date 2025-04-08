@@ -1,9 +1,8 @@
+import {Button as ButtonCpn} from 'antd'
 export const Button = () => {
     return (
         <>
-            <button type="button">Submit</button>
-            <button type="reset">Reset</button>
-            <h1>Ok</h1>
+        <ButtonCpn>Submit</ButtonCpn>
         </>
     );
 };
