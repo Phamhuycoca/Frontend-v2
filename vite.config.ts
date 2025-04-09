@@ -6,14 +6,14 @@ import path from 'path'
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 2407,
+    port: 2407
   },
-  css:{
-    devSourcemap:true
+  css: {
+    devSourcemap: true
   },
   resolve: {
     alias: {
-      '~': path.resolve(__dirname, './src'),
-    },
-  },
-})
+      '~': path.resolve(__dirname, './src')
+    }
+  }}
+)
