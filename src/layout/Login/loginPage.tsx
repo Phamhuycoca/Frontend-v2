@@ -18,7 +18,7 @@ const loginPage: React.FC = () => {
                 maxWidth:'100%'
             }}
         >
-            <Form name="login" initialValues={{ remember: true }} style={{ maxWidth: 360 }} onFinish={onFinish}>
+            <Form name="login" initialValues={{ remember: true }} style={{ maxWidth: 600, width: 360 }} onFinish={onFinish}>
                 <Form.Item name="username" rules={[{ required: true, message: 'Please input your Username!' }]}>
                     <Input prefix={<UserOutlined />} placeholder="Username" />
                 </Form.Item>
