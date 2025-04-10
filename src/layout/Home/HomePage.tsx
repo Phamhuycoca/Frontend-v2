@@ -1,23 +1,29 @@
 import React from 'react';
 import HeaderPage from './Header';
-import { Layout } from 'antd';
+import { Col, Layout, Row } from 'antd';
 import Rootpage from './../../pages/pageRoot';
-import { SiderPage } from '../Sider';
-const { Content, Footer } = Layout;
+import FooterPage from './FooterPage';
+import SiderPage from './SiderPage';
+const { Content } = Layout;
+
 const homePage: React.FC = () => {
     return (
         <>
             <Layout>
                 <HeaderPage />
                 <Layout>
-                <SiderPage/>
-                <Content style={{ maxHeight: '100vh', height: '100vh' }}>
-                    <Rootpage />
-                </Content>
+                    <SiderPage />
+                    <Content style={{ maxHeight: '100vh', height: '100vh' }}>
+                        <Row>
+                            <Col span={4}></Col>
+                            <Col span={16}>
+                                <Rootpage />
+                            </Col>
+                            <Col span={4}></Col>
+                        </Row>
+                    </Content>
                 </Layout>
-                <Footer style={{ textAlign: 'center' }}>
-                    Ant Design ©{new Date().getFullYear()} Created by Ant UED
-                </Footer>
+                <FooterPage />
             </Layout>
         </>
     );

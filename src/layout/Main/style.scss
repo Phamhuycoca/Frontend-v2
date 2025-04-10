@@ -1,0 +1,12 @@
+.my-card-actions::before,
+.my-card-actions::after {
+  display: none !important;
+}
+
+.my-card-actions {
+  background-color: red; /* Custom style cho actions */
+  padding: 8px;
+  display: flex;
+  justify-content: end;
+  gap: 8px;
+}
