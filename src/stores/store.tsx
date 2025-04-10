@@ -1,6 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
+import storeSider from './reducers/sider.slice';
 export const store = configureStore({
   reducer: {
+    sider:storeSider
   },
 });
 

@@ -3,9 +3,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { RouteIndex } from './routers';
 import { AuthProvider } from './context/authProvider';
-import PrivateRoute from './routers/PrivateRoute';
 import { Provider } from 'react-redux';
 import { store } from './stores/index';
+import PrivateRoute from './routers/privateRoute';
 function App() {
     return (
         <>
