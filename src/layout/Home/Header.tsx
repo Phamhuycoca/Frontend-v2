@@ -5,7 +5,7 @@ import type { MenuProps } from 'antd';
 import {
     BellOutlined,
     HomeOutlined,
-    MailTwoTone,
+    MailOutlined,
     MenuOutlined,
     SearchOutlined,
     UsergroupDeleteOutlined,
@@ -90,10 +90,15 @@ const HeaderPage: React.FC = () => {
                                 <Input
                                     size="large"
                                     placeholder="Search here..."
-                                    suffix={<SearchOutlined />}
+                                    suffix={<SearchOutlined style={{color:'#61BCFF'}}/>}
                                     className="ms-2"
                                     style={{
+                                        backgroundColor:'#DCF0FF',
                                         maxWidth: 500,
+                                        border: 'none',
+                                        boxShadow: 'none',
+                                        outline: 'none',
+                                        resize: 'none',
                                     }}
                                 />
                             </Col>
@@ -110,7 +115,7 @@ const HeaderPage: React.FC = () => {
                                     <Dropdown menu={{ items }} trigger={['click']} placement="bottomLeft" arrow>
                                         <a onClick={(e) => e.preventDefault()}>
                                             <Space>
-                                                <HomeOutlined style={{ fontSize: '20px' }} twoToneColor={'#57B8FF'} />
+                                                <HomeOutlined style={{ fontSize: '20px',color:'#61BCFF' }} twoToneColor={'#57B8FF'} />
                                             </Space>
                                         </a>
                                     </Dropdown>
@@ -118,8 +123,7 @@ const HeaderPage: React.FC = () => {
                                         <a onClick={(e) => e.preventDefault()}>
                                             <Space>
                                                 <UsergroupDeleteOutlined
-                                                    style={{ fontSize: '20px' }}
-                                                    twoToneColor={'#57B8FF'}
+                                                    style={{ fontSize: '20px',color:'#61BCFF' }}
                                                 />
                                             </Space>
                                         </a>
@@ -127,14 +131,14 @@ const HeaderPage: React.FC = () => {
                                     <Dropdown menu={{ items }} trigger={['click']} placement="bottomLeft" arrow>
                                         <a onClick={(e) => e.preventDefault()}>
                                             <Space>
-                                                <BellOutlined style={{ fontSize: '20px' }} twoToneColor={'#57B8FF'} />
+                                                <BellOutlined style={{ fontSize: '20px',color:'#61BCFF' }}/>
                                             </Space>
                                         </a>
                                     </Dropdown>
                                     <Dropdown menu={{ items }} trigger={['click']} placement="bottomLeft" arrow>
                                         <a onClick={(e) => e.preventDefault()}>
                                             <Space>
-                                                <MailTwoTone style={{ fontSize: '20px' }} />
+                                                <MailOutlined style={{ fontSize: '20px',color:'#61BCFF' }} />
                                             </Space>
                                         </a>
                                     </Dropdown>

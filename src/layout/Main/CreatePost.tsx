@@ -1,7 +1,8 @@
-import { EllipsisOutlined, PictureOutlined, SmileOutlined, UserAddOutlined } from '@ant-design/icons';
-import { Avatar, Button, Card, Col, Input, Row } from 'antd';
+import { EllipsisOutlined, PictureOutlined, SendOutlined, SmileOutlined, UserAddOutlined } from '@ant-design/icons';
+import { Avatar, Button, Card, Col, Dropdown, Input, Row } from 'antd';
 import React from 'react';
 import styled from 'styled-components';
+import type { MenuProps } from 'antd';
 const CustomActionsWrapper = styled.div`
     &::before,
     &::after {
@@ -10,6 +11,28 @@ const CustomActionsWrapper = styled.div`
     padding-left: 8px;
     padding-right: 8px;
 `;
+const items: MenuProps['items'] = [
+    {
+        label: 'Check in',
+        key: '0',
+    },
+    {
+        label: 'Live video',
+        key: '1',
+    },
+    {
+        label: 'Gif',
+        key: '3',
+    },
+    {
+        label: 'Watch Party',
+        key: '4',
+    },
+    {
+        label: 'Play with friend',
+        key: '5',
+    },
+];
 const CreatePostPage: React.FC = () => {
     return (
         <>
@@ -35,7 +58,13 @@ const CreatePostPage: React.FC = () => {
                                 </Button>
                             </Col>
                             <Col flex="0 0 40px">
-                                <Button icon={<EllipsisOutlined />} style={{ backgroundColor: '#e7f3ff' }} />
+                                <Dropdown menu={{ items }} trigger={['click']}>
+                                    <Button
+                                        icon={<EllipsisOutlined />}
+                                        style={{ backgroundColor: '#e7f3ff' }}
+                                        onClick={(e) => e.preventDefault()}
+                                    />
+                                </Dropdown>
                             </Col>
                         </Row>
                     </CustomActionsWrapper>,
@@ -59,6 +88,14 @@ const CreatePostPage: React.FC = () => {
                                 resize: 'none',
                             }}
                         />
+                    </Col>
+                    <Col>
+                        <Button variant='outlined' style={{
+                                border: 'none',
+                                boxShadow: 'none',
+                                outline: 'none',
+                                resize: 'none',
+                            }} icon={<SendOutlined />} />
                     </Col>
                 </Row>
             </Card>
