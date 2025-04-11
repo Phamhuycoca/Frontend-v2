@@ -73,7 +73,7 @@ const StoriesCard: React.FC = () => {
             </Space>
             <div style={{ textAlign: 'center', marginTop: 16, marginBottom: 16 }}>
                 <Button type="primary" block>
-                    See All
+                    See All aaaaaaa
                 </Button>
             </div>
         </Card>
