@@ -6,13 +6,10 @@ import path from 'path'
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 2407,
+    port: 2407
   },
   css: {
     devSourcemap: true
-  },
-  build: {
-    outDir: 'dist'
   },
   resolve: {
     alias: {
