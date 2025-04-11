@@ -15,7 +15,9 @@ const siderStyle: React.CSSProperties = {
     height:'100vh',
     maxHeight:'100vh',
     width:'100%',
-    maxWidth:'100%'
+    maxWidth:'100%',
+    zIndex: 100,
+
 };
 const SiderPage: React.FC = () => {
     const open = useSelector((state: any) => state.sider.open);
@@ -25,7 +27,7 @@ const SiderPage: React.FC = () => {
     }, [open]);
     return (
         <>
-            <Sider width={'260'} style={siderStyle} theme="light" trigger={null} collapsible collapsed={collapsed}>
+            <Sider width={'260'} style={siderStyle} theme="light" trigger={null} collapsible collapsed={!collapsed}>
                 <Menu
                     style={{ flex: 1, minWidth: 0}}
                     mode="inline"
