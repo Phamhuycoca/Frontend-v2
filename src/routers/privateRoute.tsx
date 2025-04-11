@@ -12,4 +12,4 @@ const PrivateRoute = ({ element }: PrivateRouteProps) => {
   return isAuthenticated ? <>{element}</> : <Navigate to="/login" replace />;
 };
 
-export default PrivateRoute;
+export {PrivateRoute};

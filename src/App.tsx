@@ -5,7 +5,7 @@ import { RouteIndex } from './routers';
 import { AuthProvider } from './context/authProvider';
 import { Provider } from 'react-redux';
 import { store } from './stores/index';
-import PrivateRoute from './routers/PrivateRoute';
+import { PrivateRoute } from './routers/PrivateRoute';
 function App() {
     return (
         <>
