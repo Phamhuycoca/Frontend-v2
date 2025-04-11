@@ -12,7 +12,7 @@ const MainPage: React.FC = () => {
                     <CreatePostPage />
                 </Col>
                 <Col span={8}>
-                    <Row justify={'end'}>
+                    <Row justify={'center'}>
                         <StoriesCard />
                     </Row>
                 </Col>
