@@ -6,10 +6,8 @@ interface PrivateRouteProps {
   element: ReactNode;
 }
 
-const PrivateRoute = ({ element }: PrivateRouteProps) => {
+export const PrivateRoute = ({ element }: PrivateRouteProps) => {
   const { isAuthenticated } = useAuth();
   
   return isAuthenticated ? <>{element}</> : <Navigate to="/login" replace />;
 };
-
-export {PrivateRoute};
