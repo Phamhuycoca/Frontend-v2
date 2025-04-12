@@ -6,7 +6,17 @@ import { AuthProvider } from './context/authProvider';
 import { Provider } from 'react-redux';
 import { store } from './stores/index';
 import { PrivateRoute } from './routers/RouteProtected';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 function App() {
+    useEffect(() => {
+        AOS.init({
+          duration: 800, // thời gian của animation (ms)
+          once: true,    // animation chỉ chạy 1 lần khi scroll đến
+        });
+      }, []);
     return (
         <>
             <Provider store={store}>

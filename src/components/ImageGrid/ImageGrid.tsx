@@ -11,6 +11,7 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
     const displayedImages = images.slice(0, 4);
     const remainingCount = images.length - 4;
     const remainingImages = images;
+    const [image, setImage] = useState<string>('');
     const getGridClass = () => {
         switch (displayedImages.length) {
             case 1:
@@ -25,13 +26,17 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
                 return 'grid-four';
         }
     };
+    const openModal = (imgage: string) => {
+        setImage(imgage);
+        setIsModalOpen(true);
+    };
 
     return (
         <>
             <div className={`image-grid ${getGridClass()}`}>
                 {displayedImages.map((img, index) => (
                     <div key={index} className="image-wrapper">
-                        <Image preview={false} src={img} alt={`img-${index}`} />
+                        <Image preview={false} src={img} alt={`img-${index}`} onClick={() => openModal(img)} />
                         {index === 3 && remainingCount > 0 && (
                             <div className="overlay" onClick={() => setIsModalOpen(true)}>
                                 +{remainingCount}
@@ -42,14 +47,23 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
             </div>
             <Modal
                 open={isModalOpen}
-                onCancel={() => setIsModalOpen(false)}
+                onCancel={() => {
+                    setIsModalOpen(false)
+                    setImage('');
+                }}
                 footer={null}
                 title="Hình ảnh khác"
                 width={800}
             >
-                    {remainingImages.map((img, idx) => (
-                        <Image preview={false} key={idx} src={img} alt={`extra-${idx}`} className='mb-2'/>
-                    ))}
+                {image !== '' ? (
+                    <Image src={image} className="mb-2" />
+                ) : (
+                    <>
+                        {remainingImages.map((img, idx) => (
+                            <Image preview={false} key={idx} src={img} alt={`extra-${idx}`} className="mb-2" />
+                        ))}
+                    </>
+                )}
             </Modal>
         </>
     );

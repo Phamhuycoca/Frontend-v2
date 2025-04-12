@@ -3,7 +3,7 @@ import { Col, Row } from 'antd';
 import CreatePostPage from './CreatePost';
 import StoriesCard from './StoriesCard';
 import './style.scss';
-import { CardPost, SuggestedPages, UpcomingBirthday } from '../../components';
+import { PostList, SuggestedPages, UpcomingBirthday } from '../../components';
 
 const MainPage: React.FC = () => {
     return (
@@ -18,9 +18,10 @@ const MainPage: React.FC = () => {
                 <CreatePostPage />
                 <Row className="mt-3">
                     <Col span={24}>
-                        {Array.from({ length: 4 }).map((_, index) => (
+                        {/* {Array.from({ length: 4 }).map((_, index) => (
                             <CardPost key={index} />
-                        ))}
+                        ))} */}
+                        <PostList/>
                     </Col>
                 </Row>
             </Col>
