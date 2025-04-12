@@ -1,43 +1,58 @@
-// ImageGrid.tsx
-import React from 'react';
-import { Image } from 'antd';
+import React, { useState } from 'react';
 import './ImageGrid.scss';
+import { Image, Modal } from 'antd';
 
 interface ImageGridProps {
-  images: string[];
+    images: string[];
 }
 
 const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
-  const count = images.length;
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const displayedImages = images.slice(0, 4);
+    const remainingCount = images.length - 4;
+    const remainingImages = images.slice(4);
+    const getGridClass = () => {
+        switch (displayedImages.length) {
+            case 1:
+                return 'grid-one';
+            case 2:
+                return 'grid-two';
+            case 3:
+                return 'grid-three';
+            case 4:
+                return 'grid-four';
+            default:
+                return 'grid-four';
+        }
+    };
 
-  return (
-    <div className={`image-grid count-${count}`}>
-      {count === 1 ? (
-        <Image
-          src={images[0]}
-          width="100%"
-          height="auto"
-          preview
-          style={{ borderRadius: 8 }}
-        />
-      ) : (
-        images.map((img, index) => (
-          <div className="image-wrapper" key={index}>
-            <Image
-              src={img}
-              preview
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                borderRadius: 8,
-              }}
-            />
-          </div>
-        ))
-      )}
-    </div>
-  );
+    return (
+        <>
+            <div className={`image-grid ${getGridClass()}`}>
+                {displayedImages.map((img, index) => (
+                    <div key={index} className="image-wrapper">
+                        <Image src={img} alt={`img-${index}`} />
+                        {index === 3 && remainingCount > 0 && (
+                            <div className="overlay" onClick={() => setIsModalOpen(true)}>
+                                +{remainingCount}
+                            </div>
+                        )}
+                    </div>
+                ))}
+            </div>
+            <Modal
+                open={isModalOpen}
+                onCancel={() => setIsModalOpen(false)}
+                footer={null}
+                title="Hình ảnh khác"
+                width={800}
+            >
+                    {remainingImages.map((img, idx) => (
+                        <Image key={idx} src={img} alt={`extra-${idx}`} className='mb-2'/>
+                    ))}
+            </Modal>
+        </>
+    );
 };
 
 export default ImageGrid;
