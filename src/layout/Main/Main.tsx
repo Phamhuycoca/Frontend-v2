@@ -3,15 +3,18 @@ import { Col, Row } from 'antd';
 import CreatePostPage from './CreatePost';
 import StoriesCard from './StoriesCard';
 import './style.scss';
-import { CardPost } from '../../components';
+import { CardPost, SuggestedPages, UpcomingBirthday } from '../../components';
 
 const MainPage: React.FC = () => {
     return (
         <Row gutter={[8, 8]} className="mt-2">
-            <Col span={16} style={{
-                minHeight:'100vh',
-                height:'100%'
-            }}>
+            <Col
+                span={16}
+                style={{
+                    minHeight: '100vh',
+                    height: '100%',
+                }}
+            >
                 <CreatePostPage />
                 <Row className="mt-3">
                     <Col span={24}>
@@ -23,7 +26,9 @@ const MainPage: React.FC = () => {
             </Col>
             <Col span={8}>
                 <Row justify="center">
-                    <StoriesCard />
+                    <StoriesCard/>
+                    <UpcomingBirthday />
+                    <SuggestedPages />
                 </Row>
             </Col>
         </Row>

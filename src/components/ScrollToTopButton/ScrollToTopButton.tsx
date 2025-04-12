@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from 'antd';
 import classNames from 'classnames/bind';
 import styles from './ScrollToTopButton.module.scss';
 const cx = classNames.bind(styles);
 
-const ScrollToTopButton = () => {
+const ScrollToTopButton:React.FC = () => {
     const [isVisible, setIsVisible] = useState(false);
 
     // Hàm kiểm tra cuộn trang
