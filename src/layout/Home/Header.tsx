@@ -148,8 +148,8 @@ const HeaderPage: React.FC = () => {
                                 <Row justify={'end'} align={'middle'} style={{ height: '100%', maxHeight: '100%' }}>
                                     <Dropdown menu={{ items }} trigger={['click']} placement="bottomLeft" arrow>
                                         <a onClick={(e) => e.preventDefault()}>
-                                            <Space>
-                                                <Avatar size="large" icon={<UserOutlined />} className="me-4" />
+                                            <Space>                                                
+                                                <Avatar size="large" icon={<UserOutlined />} className="me-4" src='https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463633/464406393_1225444018740551_556811453310840895_n_kwgfdn.jpg'/>
                                             </Space>
                                         </a>
                                     </Dropdown>

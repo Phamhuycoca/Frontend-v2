@@ -73,7 +73,7 @@ const CreatePostPage: React.FC = () => {
                 <Row align="middle" style={{ marginBottom: 16 }}>
                     <Col>
                         <Avatar
-                            src="https://randomuser.me/api/portraits/men/32.jpg"
+                            src="https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463633/464406393_1225444018740551_556811453310840895_n_kwgfdn.jpg"
                             size={48}
                             style={{ marginRight: 12 }}
                         />

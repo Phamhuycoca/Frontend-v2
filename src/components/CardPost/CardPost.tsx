@@ -76,6 +76,9 @@ const CardPost: React.FC = () => {
         'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463015/Snapins.ai_436513277_17976565007689334_4194788892760304090_n_1080_dvamex.jpg',
         'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744389531/485730074_1114737893738212_1753368295113564478_n_vopjsz.jpg',
         'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744389531/486062504_1114737393738262_357359478360556972_n_fsy7u1.jpg',
+        'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744389533/485035891_1112428667302468_7524161883491890393_n_dhwogd.jpg',
+        'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744389531/484629919_1112428663969135_8561795339182956993_n_df5m9x.jpg',
+        'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463633/490011465_17899777956172253_3024570406282557719_n_nxqjl4.jpg'
     ];
 
     return (
@@ -96,7 +99,7 @@ const CardPost: React.FC = () => {
             >
                 <Meta
                     avatar={
-                        <Avatar src="https://res.cloudinary.com/drhdgw1xx/image/upload/v1744389292/489570373_18363216550133291_2396251366816409346_n_tfpjy9.jpg" />
+                        <Avatar src="https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463633/464406393_1225444018740551_556811453310840895_n_kwgfdn.jpg" />
                     }
                     title={
                         <>
