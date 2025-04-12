@@ -1,11 +1,9 @@
 import React from 'react';
-import HeaderPage from './Header';
+import HeaderPage from '../Header/Header';
 import { Col, Layout, Row } from 'antd';
 import Rootpage from './../../pages/pageRoot';
 // import FooterPage from './FooterPage';
-import SiderPage from './SiderPage';
-import FriendPage from './FriendPage';
-import { ScrollToTopButton } from '../../components';
+import { FriendPage, ScrollToTopButton, SiderPage } from '../../components';
 const { Content } = Layout;
 
 const homePage: React.FC = () => {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Col, Row } from 'antd';
-import CreatePostPage from './CreatePost';
-import StoriesCard from './StoriesCard';
-import './style.scss';
+import CreatePostPage from '../../components/CreatePost/CreatePost';
+import StoriesCard from '../../components/StoriesCard/StoriesCard';
+import './main.module.scss';
 import { PostList, SuggestedPages, UpcomingBirthday } from '../../components';
 
 const MainPage: React.FC = () => {
@@ -18,9 +18,6 @@ const MainPage: React.FC = () => {
                 <CreatePostPage />
                 <Row className="mt-3">
                     <Col span={24}>
-                        {/* {Array.from({ length: 4 }).map((_, index) => (
-                            <CardPost key={index} />
-                        ))} */}
                         <PostList/>
                     </Col>
                 </Row>

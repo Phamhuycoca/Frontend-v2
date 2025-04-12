@@ -13,6 +13,8 @@ import {
 } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { setOpen } from '../../stores/reducers/sider.slice';
+import { Link } from 'react-router-dom';
+import UserHeader from './User/UserHeader';
 const { Header } = Layout;
 const items: MenuProps['items'] = [
     {
@@ -90,10 +92,10 @@ const HeaderPage: React.FC = () => {
                                 <Input
                                     size="large"
                                     placeholder="Search here..."
-                                    suffix={<SearchOutlined style={{color:'#61BCFF'}}/>}
+                                    suffix={<SearchOutlined style={{ color: '#61BCFF' }} />}
                                     className="ms-2"
                                     style={{
-                                        backgroundColor:'#DCF0FF',
+                                        backgroundColor: '#DCF0FF',
                                         maxWidth: 500,
                                         border: 'none',
                                         boxShadow: 'none',
@@ -112,33 +114,35 @@ const HeaderPage: React.FC = () => {
                                     align={'middle'}
                                     style={{ height: '100%', maxHeight: '100%' }}
                                 >
-                                    <Dropdown menu={{ items }} trigger={['click']} placement="bottomLeft" arrow>
-                                        <a onClick={(e) => e.preventDefault()}>
-                                            <Space>
-                                                <HomeOutlined style={{ fontSize: '20px',color:'#61BCFF' }} twoToneColor={'#57B8FF'} />
-                                            </Space>
-                                        </a>
-                                    </Dropdown>
-                                    <Dropdown menu={{ items }} trigger={['click']} placement="bottomLeft" arrow>
+                                    <Link to="/">
+                                        <Space>
+                                            <HomeOutlined
+                                                style={{ fontSize: '20px', color: '#61BCFF' }}
+                                                twoToneColor={'#57B8FF'}
+                                            />
+                                        </Space>
+                                    </Link>
+                                    {/* <Dropdown menu={{ items }} trigger={['click']} placement="bottomRight">
                                         <a onClick={(e) => e.preventDefault()}>
                                             <Space>
                                                 <UsergroupDeleteOutlined
-                                                    style={{ fontSize: '20px',color:'#61BCFF' }}
+                                                    style={{ fontSize: '20px', color: '#61BCFF' }}
                                                 />
                                             </Space>
                                         </a>
-                                    </Dropdown>
+                                    </Dropdown> */}
+                                    <UserHeader />
                                     <Dropdown menu={{ items }} trigger={['click']} placement="bottomLeft" arrow>
                                         <a onClick={(e) => e.preventDefault()}>
                                             <Space>
-                                                <BellOutlined style={{ fontSize: '20px',color:'#61BCFF' }}/>
+                                                <BellOutlined style={{ fontSize: '20px', color: '#61BCFF' }} />
                                             </Space>
                                         </a>
                                     </Dropdown>
                                     <Dropdown menu={{ items }} trigger={['click']} placement="bottomLeft" arrow>
                                         <a onClick={(e) => e.preventDefault()}>
                                             <Space>
-                                                <MailOutlined style={{ fontSize: '20px',color:'#61BCFF' }} />
+                                                <MailOutlined style={{ fontSize: '20px', color: '#61BCFF' }} />
                                             </Space>
                                         </a>
                                     </Dropdown>
@@ -148,8 +152,13 @@ const HeaderPage: React.FC = () => {
                                 <Row justify={'end'} align={'middle'} style={{ height: '100%', maxHeight: '100%' }}>
                                     <Dropdown menu={{ items }} trigger={['click']} placement="bottomLeft" arrow>
                                         <a onClick={(e) => e.preventDefault()}>
-                                            <Space>                                                
-                                                <Avatar size="large" icon={<UserOutlined />} className="me-4" src='https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463633/464406393_1225444018740551_556811453310840895_n_kwgfdn.jpg'/>
+                                            <Space>
+                                                <Avatar
+                                                    size="large"
+                                                    icon={<UserOutlined />}
+                                                    className="me-4"
+                                                    src="https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463633/464406393_1225444018740551_556811453310840895_n_kwgfdn.jpg"
+                                                />
                                             </Space>
                                         </a>
                                     </Dropdown>

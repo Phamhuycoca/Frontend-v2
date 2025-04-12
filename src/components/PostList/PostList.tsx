@@ -24,7 +24,7 @@ const fakeImages = [
     'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744389531/485730074_1114737893738212_1753368295113564478_n_vopjsz.jpg',
     'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744389531/486062504_1114737393738262_357359478360556972_n_fsy7u1.jpg',
 ];
-const generatePosts = (start = 0, count = 5) => {
+const generatePosts = (start = 0, count = 1) => {
     return Array.from({ length: count }).map((_, i) => ({
         id: `post-${start + i}`,
         user: {
