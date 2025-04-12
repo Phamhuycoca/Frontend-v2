@@ -8,7 +8,6 @@ import {
     MailOutlined,
     MenuOutlined,
     SearchOutlined,
-    UsergroupDeleteOutlined,
     UserOutlined,
 } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
