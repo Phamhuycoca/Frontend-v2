@@ -5,6 +5,7 @@ import App from './App';
 import './styles/index.scss';
 import { legacyLogicalPropertiesTransformer, StyleProvider } from '@ant-design/cssinjs';
 import { ConfigProvider } from 'antd';
+import 'remixicon/fonts/remixicon.css'
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
         <StyleProvider hashPriority="high" transformers={[legacyLogicalPropertiesTransformer]}>

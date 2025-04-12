@@ -1,0 +1,16 @@
+.button-scroll {
+    background-color: #4FC3F7;
+    border-color: transparent;
+    height: 50px !important;
+    width: 50px !important;
+    &:hover {
+        background-color: #4FC3F7 !important;
+        border-color: transparent !important;
+    }
+}
+.button-scroll-icon {
+    color: #fff;
+}
+.button-scroll:hover .button-scroll-icon {
+    color: #fff!important;
+}

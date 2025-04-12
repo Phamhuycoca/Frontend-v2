@@ -5,17 +5,18 @@ import Rootpage from './../../pages/pageRoot';
 // import FooterPage from './FooterPage';
 import SiderPage from './SiderPage';
 import FriendPage from './FriendPage';
+import { ScrollToTopButton } from '../../components';
 const { Content } = Layout;
 
 const homePage: React.FC = () => {
     return (
         <>
-            <Layout>
+            <Layout style={{ minHeight: '100vh', height: '100%' }}>
                 <HeaderPage />
                 <Layout>
                     <SiderPage />
-                    <Content style={{ maxHeight: '100vh', height: '100vh' }}>
-                        <Row>
+                    <Content style={{ padding: '0 24px' }}>
+                        <Row style={{ minHeight: '100vh', height: '100%' }}>
                             <Col span={4}></Col>
                             <Col span={16}>
                                 <Rootpage />
@@ -24,9 +25,9 @@ const homePage: React.FC = () => {
                                 <FriendPage />
                             </Col>
                         </Row>
+                        <ScrollToTopButton />
                     </Content>
                 </Layout>
-                {/* <FooterPage /> */}
             </Layout>
         </>
     );

@@ -31,7 +31,7 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
             <div className={`image-grid ${getGridClass()}`}>
                 {displayedImages.map((img, index) => (
                     <div key={index} className="image-wrapper">
-                        <Image src={img} alt={`img-${index}`} />
+                        <Image preview={false} src={img} alt={`img-${index}`} />
                         {index === 3 && remainingCount > 0 && (
                             <div className="overlay" onClick={() => setIsModalOpen(true)}>
                                 +{remainingCount}
@@ -48,7 +48,7 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
                 width={800}
             >
                     {remainingImages.map((img, idx) => (
-                        <Image key={idx} src={img} alt={`extra-${idx}`} className='mb-2'/>
+                        <Image preview={false} key={idx} src={img} alt={`extra-${idx}`} className='mb-2'/>
                     ))}
             </Modal>
         </>
