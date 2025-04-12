@@ -1,7 +1,8 @@
 // PostList.tsx
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import CardPost from '../CardPost/CardPost';
+import { Skeleton } from 'antd';
 
 const fakeImages = [
     'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744389533/485035891_1112428667302468_7524161883491890393_n_dhwogd.jpg',
@@ -22,7 +23,6 @@ const fakeImages = [
     'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463015/Snapins.ai_436513277_17976565007689334_4194788892760304090_n_1080_dvamex.jpg',
     'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744389531/485730074_1114737893738212_1753368295113564478_n_vopjsz.jpg',
     'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744389531/486062504_1114737393738262_357359478360556972_n_fsy7u1.jpg',
-  
 ];
 const generatePosts = (start = 0, count = 5) => {
     return Array.from({ length: count }).map((_, i) => ({
@@ -37,11 +37,12 @@ const generatePosts = (start = 0, count = 5) => {
     }));
 };
 
-
 const PostList: React.FC = () => {
     const [posts, setPosts] = useState(generatePosts(0, 5));
     const [hasMore, setHasMore] = useState(true);
-
+    useEffect(()=>{
+        window.scrollTo({ top: 0, behavior: 'auto' });
+    },[]);
     const fetchMoreData = () => {
         if (posts.length >= 50) {
             setHasMore(false);
@@ -50,16 +51,18 @@ const PostList: React.FC = () => {
         setTimeout(() => {
             const newPosts = generatePosts(posts.length, 1);
             setPosts((prev) => [...prev, ...newPosts]);
-        }, 1000);
+        }, 5000);
     };
 
     return (
         <InfiniteScroll
-        style={{ overflowY: 'hidden' }}
+            style={{ overflowY: 'hidden' }}
             dataLength={posts.length}
             next={fetchMoreData}
             hasMore={hasMore}
-            loader={<h4>Loading...</h4>}
+            loader={
+                <Skeleton avatar paragraph={{ rows: 4 }} />
+            }
             endMessage={
                 <p style={{ textAlign: 'center' }}>
                     <b>You have seen it all!</b>

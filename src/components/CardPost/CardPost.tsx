@@ -1,9 +1,14 @@
 // CardPost.tsx
 import React from 'react';
 import {
-    BellOutlined, CloseCircleOutlined, EllipsisOutlined,
-    LikeOutlined, MessageOutlined, SaveOutlined,
-    ShareAltOutlined, UserDeleteOutlined,
+    BellOutlined,
+    CloseCircleOutlined,
+    EllipsisOutlined,
+    LikeOutlined,
+    MessageOutlined,
+    SaveOutlined,
+    ShareAltOutlined,
+    UserDeleteOutlined,
 } from '@ant-design/icons';
 import { Avatar, Card, Col, Dropdown, List, Row, Space } from 'antd';
 import { createStyles } from 'antd-style';
@@ -30,7 +35,12 @@ type ListMemu = {
 const ListMenus: ListMemu[] = [
     { key: '1', icon: <SaveOutlined />, title: 'Save Post', description: 'Add this to your saved items' },
     { key: '2', icon: <CloseCircleOutlined />, title: 'Hide Post', description: 'See fewer posts like this' },
-    { key: '3', icon: <UserDeleteOutlined />, title: 'Unfollow User', description: 'Stop seeing posts but stay friends' },
+    {
+        key: '3',
+        icon: <UserDeleteOutlined />,
+        title: 'Unfollow User',
+        description: 'Stop seeing posts but stay friends',
+    },
     { key: '4', icon: <BellOutlined />, title: 'Notifications', description: 'Turn on notifications for this post' },
 ];
 
@@ -53,15 +63,21 @@ const CardPost: React.FC<{ post: PostType }> = ({ post }) => {
 
     return (
         <Card
-        data-aos="fade-up"
-        data-aos-delay="200"
-        data-aos-duration="1000"
-        data-aos-easing="ease-in-out"
-            style={{ width: '100%', marginBottom: 24 }}
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            style={{ width: '100%', marginBottom: 18 }}
             actions={[
-                <span><LikeOutlined /> 140 Likes</span>,
-                <span><MessageOutlined /> 20 Comment</span>,
-                <span><ShareAltOutlined /> 99 Share</span>,
+                <span>
+                    <LikeOutlined /> 140 Likes
+                </span>,
+                <span>
+                    <MessageOutlined /> 20 Comment
+                </span>,
+                <span>
+                    <ShareAltOutlined /> 99 Share
+                </span>,
             ]}
         >
             <Meta
@@ -89,9 +105,15 @@ const CardPost: React.FC<{ post: PostType }> = ({ post }) => {
                                                     <List.Item className={cx(styles.list)}>
                                                         <List.Item.Meta
                                                             key={index}
-                                                            avatar={<div style={{ fontSize: 18 }}>{item.icon}</div>}
+                                                            avatar={
+                                                                <div style={{ fontSize: 18 }} className="ms-2">
+                                                                    {item.icon}
+                                                                </div>
+                                                            }
                                                             title={<span>{item.title}</span>}
-                                                            description={<span style={{ fontSize: 14 }}>{item.description}</span>}
+                                                            description={
+                                                                <span style={{ fontSize: 14 }}>{item.description}</span>
+                                                            }
                                                         />
                                                     </List.Item>
                                                 )}
@@ -100,7 +122,9 @@ const CardPost: React.FC<{ post: PostType }> = ({ post }) => {
                                     )}
                                 >
                                     <a onClick={(e) => e.preventDefault()}>
-                                        <Space><EllipsisOutlined style={{ fontSize: 18 }} /></Space>
+                                        <Space>
+                                            <EllipsisOutlined style={{ fontSize: 18 }} />
+                                        </Space>
                                     </a>
                                 </Dropdown>
                             </Row>
