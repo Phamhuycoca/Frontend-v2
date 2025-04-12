@@ -10,7 +10,7 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const displayedImages = images.slice(0, 4);
     const remainingCount = images.length - 4;
-    const remainingImages = images.slice(4);
+    const remainingImages = images;
     const getGridClass = () => {
         switch (displayedImages.length) {
             case 1:
