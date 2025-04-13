@@ -9,3 +9,4 @@ export { default as SiderPage } from './Sider/SiderPage';
 export { default as CreatePost} from './CreatePost/CreatePost'
 export { default as StoriesCard} from './StoriesCard/StoriesCard'
 export {default as VideoPlayer} from './VideoJS/VideoPlayer'
+export {default as RichText} from './RichText/RichText'
