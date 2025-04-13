@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 
 interface VideoPlayerProps {
     src: string;
@@ -9,6 +9,7 @@ interface VideoPlayerProps {
     muted?: boolean;
     loop?: boolean;
     controls?: boolean;
+    style?: CSSProperties | undefined;
 }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
@@ -20,9 +21,15 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
     muted = false,
     loop = false,
     controls = true,
+    style,
 }) => {
+    const mergeStyle = {
+        width,
+        height,
+        ...style,
+    };
     return (
-        <div style={{ width, height }}>
+        <div style={mergeStyle}>
             <video
                 width="100%"
                 height="100%"
@@ -34,6 +41,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
                 style={{ borderRadius: '12px' }}
             >
                 <source src={src} type="video/ogg" />
+                <source src={src} type="video/mp4" />
             </video>
         </div>
     );
