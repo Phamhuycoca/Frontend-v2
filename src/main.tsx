@@ -1,4 +1,4 @@
-import { StrictMode } from 'react';
+// import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
@@ -7,11 +7,11 @@ import { legacyLogicalPropertiesTransformer, StyleProvider } from '@ant-design/c
 import { ConfigProvider } from 'antd';
 import 'remixicon/fonts/remixicon.css';
 createRoot(document.getElementById('root')!).render(
-    <StrictMode>
+    // <StrictMode>
         <ConfigProvider theme={{ token: {},cssVar:false, hashed: false }}>
             <StyleProvider hashPriority="low" transformers={[legacyLogicalPropertiesTransformer]}>
                 <App />
             </StyleProvider>
         </ConfigProvider>
-    </StrictMode>,
+    // </StrictMode>,
 );
