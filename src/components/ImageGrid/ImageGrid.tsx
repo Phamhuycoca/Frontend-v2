@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './ImageGrid.scss';
 import { Image, Modal } from 'antd';
-import ReactPlayer from 'react-player/youtube';
 import VideoPlayer from '../VideoJS/VideoPlayer';
 interface ImageGridProps {
     images: string[];
