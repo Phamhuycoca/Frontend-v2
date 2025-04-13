@@ -60,7 +60,7 @@ const { Meta } = Card;
 
 const CardPost: React.FC<{ post: PostType }> = ({ post }) => {
     const { styles, cx } = useStyles();
-
+    
     return (
         <Card
             data-aos="fade-up"

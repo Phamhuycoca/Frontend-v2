@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './ImageGrid.scss';
 import { Image, Modal } from 'antd';
-
+import ReactPlayer from 'react-player/youtube';
+import VideoPlayer from '../VideoJS/VideoPlayer';
 interface ImageGridProps {
     images: string[];
 }
@@ -36,11 +37,19 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
             <div className={`image-grid ${getGridClass()}`}>
                 {displayedImages.map((img, index) => (
                     <div key={index} className="image-wrapper">
-                        <Image preview={false} src={img} alt={`img-${index}`} onClick={() => openModal(img)} />
-                        {index === 3 && remainingCount > 0 && (
-                            <div className="overlay" onClick={() => setIsModalOpen(true)}>
-                                +{remainingCount}
-                            </div>
+                        {img.includes('.mp4') ? (
+                            <>
+                                <VideoPlayer src={img} />
+                            </>
+                        ) : (
+                            <>
+                                <Image preview={false} src={img} alt={`img-${index}`} onClick={() => openModal(img)} />
+                                {index === 3 && remainingCount > 0 && (
+                                    <div className="overlay" onClick={() => setIsModalOpen(true)}>
+                                        +{remainingCount}
+                                    </div>
+                                )}
+                            </>
                         )}
                     </div>
                 ))}
@@ -48,7 +57,7 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
             <Modal
                 open={isModalOpen}
                 onCancel={() => {
-                    setIsModalOpen(false)
+                    setIsModalOpen(false);
                     setImage('');
                 }}
                 footer={null}

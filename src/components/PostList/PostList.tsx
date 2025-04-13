@@ -8,6 +8,7 @@ const fakeImages = [
     'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744389533/485035891_1112428667302468_7524161883491890393_n_dhwogd.jpg',
     'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744389531/484629919_1112428663969135_8561795339182956993_n_df5m9x.jpg',
     'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463633/490011465_17899777956172253_3024570406282557719_n_nxqjl4.jpg',
+    'https://res.cloudinary.com/drhdgw1xx/video/upload/v1744463019/Snapins.ai_video_AQMC4hL4nRg3wMKmrU8oCkJpTBG4qGFbPW3BPiML2uY8-e2THP5DyDnqyF-FJMJwqRA7cYClIeJ43bxzqo3UFeHCaxBnetBSYAm52u8_1_nki9es.mp4',
     'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463016/Snapins.ai_482451414_18019050191689334_8469670557885974096_n_1080_le82fd.jpg',
     'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463016/Snapins.ai_482804041_18019050182689334_6423249862590659425_n_1080_ricisr.jpg',
     'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463016/Snapins.ai_482918326_18019050200689334_3721899778141811526_n_1080_np6rbw.jpg',
