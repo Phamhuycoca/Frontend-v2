@@ -16,20 +16,26 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
     src,
     poster,
     width = '100%',
-    height = 'auto',
+    height = '100%',
     autoPlay = false,
     muted = false,
     loop = false,
     controls = true,
     style,
 }) => {
+   
+
+   
     const mergeStyle = {
         width,
         height,
         ...style,
     };
+
     return (
-        <div style={mergeStyle}>
+        <div
+            style={mergeStyle}
+        >
             <video
                 width="100%"
                 height="100%"
