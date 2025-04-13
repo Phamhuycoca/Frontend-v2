@@ -12,7 +12,6 @@ import {
 } from '@ant-design/icons';
 import { createStyles } from 'antd-style';
 const { Title, Text } = Typography;
-const { TabPane } = Tabs;
 const useStyles = createStyles(({ css }) => ({
     tabswrap: css`
         .ant-tabs-nav {
@@ -90,7 +89,11 @@ const ProfilePage: React.FC = () => {
                     overflow: 'hidden',
                     borderRadius: '10px',
                 }}
-                bodyStyle={{ padding: 0 }}
+                styles={{
+                    body: {
+                        padding: 0,
+                    },
+                }}
             >
                 <div
                     style={{
@@ -154,20 +157,33 @@ const ProfilePage: React.FC = () => {
                 </div>
             </Card>
             <div style={{ width: '100%' }} className="mt-4">
-                <Tabs defaultActiveKey="1" type="card" className={cx(styles.tabswrap)}>
-                    <TabPane tab="Timeline" key="1">
-                        Nội dung Timeline
-                    </TabPane>
-                    <TabPane tab="About" key="2">
-                        Nội dung About
-                    </TabPane>
-                    <TabPane tab="Friends" key="3">
-                        Danh sách bạn bè
-                    </TabPane>
-                    <TabPane tab="Photos" key="4">
-                        Album ảnh
-                    </TabPane>
-                </Tabs>
+                <Tabs
+                    defaultActiveKey="1"
+                    type="card"
+                    className={cx(styles.tabswrap)}
+                    items={[
+                        {
+                            key: '1',
+                            label: 'Timeline',
+                            children: 'Nội dung Timeline',
+                        },
+                        {
+                            key: '2',
+                            label: 'About',
+                            children: 'Nội dung About',
+                        },
+                        {
+                            key: '3',
+                            label: 'Friends',
+                            children: 'Danh sách bạn bè',
+                        },
+                        {
+                            key: '4',
+                            label: 'Photos',
+                            children: 'Album ảnh',
+                        },
+                    ]}
+                />
             </div>
         </>
     );
