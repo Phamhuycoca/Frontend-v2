@@ -2,6 +2,7 @@ import React from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input, Flex } from 'antd';
 import { Link } from 'react-router-dom';
+import { RichText } from '../../components';
 
 const loginPage: React.FC = () => {
     const onFinish = (values: any) => {
@@ -41,6 +42,7 @@ const loginPage: React.FC = () => {
                     or <Link to="/register">Register now!</Link>
                 </Form.Item>
             </Form>
+            <RichText/>
         </div>
     );
 };
