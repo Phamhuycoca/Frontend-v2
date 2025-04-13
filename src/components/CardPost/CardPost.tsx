@@ -16,6 +16,7 @@ import { createStyles } from 'antd-style';
 import ImageGrid from '../ImageGrid/ImageGrid';
 import UploadTextArea from './UploadTextArea';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 type PostType = {
     id: string;
     user: {
@@ -119,7 +120,7 @@ const CardPost: React.FC<{ post: PostType }> = ({ post }) => {
                     title={
                         <Row>
                             <Col span={12}>
-                                <span style={{ fontWeight: 600 }}>{post.user.name}</span>{' '}
+                                <Link to={`/profile/${post.id}`} style={{ fontWeight: 600,textDecoration:'none' }} className='me-2'>{post.user.name}</Link>
                                 <span style={{ color: '#888' }}>Add New Post</span>
                             </Col>
                             <Col span={12}>
