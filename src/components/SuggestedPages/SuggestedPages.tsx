@@ -162,8 +162,9 @@ const SuggestedPages: React.FC = () => (
                 </a>
             </Dropdown>
         }
+        className='mb-2'
         size="small"
-        style={{ width: '100%' }}
+        style={{ width: '100%', boxShadow: '0 0 10px rgba(0, 0, 0, 0.15)' }}
     >
         <Space direction="vertical" style={{ width: '100%' }}>
             {stories.map((story) => (

@@ -7,7 +7,12 @@ import { PostList, SuggestedPages, UpcomingBirthday } from '../../components';
 
 const MainPage: React.FC = () => {
     return (
-        <Row gutter={[8, 8]} className="mt-2">
+        <Row
+            gutter={[8, 8]}
+            style={{
+                marginTop: '100px',
+            }}
+        >
             <Col
                 span={16}
                 style={{
@@ -15,16 +20,25 @@ const MainPage: React.FC = () => {
                     height: '100%',
                 }}
             >
-                <CreatePostPage />
+                <Row>
+                    <Col
+                        span={24}
+                        style={{
+                            padding: '0 10px',
+                        }}
+                    >
+                        <CreatePostPage />
+                    </Col>
+                </Row>
                 <Row className="mt-3">
                     <Col span={24}>
-                        <PostList/>
+                        <PostList />
                     </Col>
                 </Row>
             </Col>
             <Col span={8}>
                 <Row justify="center">
-                    <StoriesCard/>
+                    <StoriesCard />
                     <UpcomingBirthday />
                     <SuggestedPages />
                 </Row>

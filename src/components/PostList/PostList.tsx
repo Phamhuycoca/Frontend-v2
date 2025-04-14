@@ -57,7 +57,7 @@ const PostList: React.FC = () => {
 
     return (
         <InfiniteScroll
-            style={{ overflowY: 'hidden' }}
+            style={{ overflowY: 'hidden',padding:'10px' }}
             dataLength={posts.length}
             next={fetchMoreData}
             hasMore={hasMore}

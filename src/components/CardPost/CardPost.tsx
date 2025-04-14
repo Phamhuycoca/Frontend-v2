@@ -100,7 +100,11 @@ const CardPost: React.FC<{ post: PostType }> = ({ post }) => {
                 data-aos-delay="200"
                 data-aos-duration="1000"
                 data-aos-easing="ease-in-out"
-                style={{ width: '100%', marginBottom: 18 }}
+                style={{ 
+                    width: '100%', 
+                    marginBottom: 18 ,
+                   boxShadow: '0 0 10px rgba(0, 0, 0, 0.15)'
+                }}
                 // actions={[
                 //         <span>
                 //             <LikeOutlined /> 140 Likes

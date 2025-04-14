@@ -26,7 +26,8 @@ const siderStyle: React.CSSProperties = {
     right: 0,
     scrollbarWidth: 'thin',
     scrollbarGutter: 'stable',
-    height: '90vh',
+    height: '100%',
+    maxHeight:'100vh',
     boxShadow: '-4px 0 6px rgba(134, 134, 134, 0.1)',
 };
 const FriendPage = () => {

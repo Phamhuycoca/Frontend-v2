@@ -10,12 +10,16 @@ const TimelinePage: React.FC = () => {
                 <Col span={8}>
                     <Card
                         style={{
+                            boxShadow: '0 0 10px rgba(0, 0, 0, 0.15)',
                             cursor: 'pointer',
                         }}
                     >
                         <StarTwoTone /> <span style={{ color: '#40a9ff' }}> 27 Items for yoou</span>
                     </Card>
                     <Card
+                        style={{
+                            boxShadow: '0 0 10px rgba(0, 0, 0, 0.15)',
+                        }}
                         variant="borderless"
                         className="mt-3"
                         title={<span className="ms-1">Life Event</span>}
@@ -84,6 +88,9 @@ const TimelinePage: React.FC = () => {
                         ))}
                     </Card>
                     <Card
+                        style={{
+                            boxShadow: '0 0 10px rgba(0, 0, 0, 0.15)',
+                        }}
                         variant="borderless"
                         className="mt-3"
                         title={<span className="ms-1">Photos</span>}
@@ -112,6 +119,9 @@ const TimelinePage: React.FC = () => {
                         </Row>
                     </Card>
                     <Card
+                        style={{
+                            boxShadow: '0 0 10px rgba(0, 0, 0, 0.15)',
+                        }}
                         variant="borderless"
                         className="mt-3"
                         title={<span className="ms-1">Friends</span>}
@@ -144,8 +154,12 @@ const TimelinePage: React.FC = () => {
                     </Card>
                 </Col>
                 <Col span={16}>
-                    <CreatePost />
-                    <div style={{ width: '100%', height: '100%' }} className='mt-3'>
+                    <div style={{
+                        margin:'0 10px'
+                    }}>
+                        <CreatePost />
+                    </div>
+                    <div style={{ width: '100%', height: '100%' }} className="mt-3">
                         <PostList />
                     </div>
                 </Col>

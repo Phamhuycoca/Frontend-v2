@@ -43,7 +43,10 @@ const stories: StoryItem[] = [
 
 const StoriesCard: React.FC = () => {
     return (
-        <Card title="Stories" size="small" style={{ width: '100%' }}>
+        <Card title="Stories" size="small"
+        className='mb-2' style={{ width: '100%',
+             boxShadow: '0 0 10px rgba(0, 0, 0, 0.15)'
+         }}>
             <Space direction="vertical" style={{ width: '100%' }}>
                 {stories.map((story) => (
                     <div
