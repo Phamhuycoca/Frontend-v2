@@ -36,12 +36,12 @@ const LikeButton: React.FC = () => {
             <div className="like-button">
                 <LikeOutlined style={{ color: '#1877F2' }} />
                 <span style={{ marginLeft: 4 }}>
-                    {selectedReaction ? `${likesCount} ${selectedReaction.charAt(0).toUpperCase() + selectedReaction.slice(1)}` : `${likesCount} Likes`}
+                    {selectedReaction ? `${likesCount} ${selectedReaction.charAt(0).toUpperCase() + selectedReaction.slice(1)}s` : `${likesCount} Likes`}
                 </span>
             </div>
 
-            {/* Thêm class show khi showReactions là true */}
-            {showReactions && selectedReaction && (
+            {/* Hiển thị các emoji khi hover */}
+            {showReactions && (
                 <div className={`reaction-popup ${showReactions ? 'show' : ''}`}>
                     {emojis.map((emoji) => (
                         <img
