@@ -1,0 +1,47 @@
+.like-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.like-button {
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease; /* Thêm hiệu ứng khi hover */
+}
+
+.like-button:hover {
+    transform: scale(1.1); /* Khi hover, nút like sẽ phóng to */
+}
+
+.reaction-popup {
+    display: flex;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(10px); /* Bắt đầu từ vị trí thấp hơn */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Thêm hiệu ứng */
+}
+
+.reaction-popup.show {
+    opacity: 1; /* Khi popup xuất hiện, opacity sẽ bằng 1 */
+    transform: translateY(0); /* Emoji sẽ "bay lên" */
+}
+
+.emoji {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease; /* Thêm hiệu ứng cho các emoji */
+}
+
+.emoji:hover {
+    transform: scale(1.2); /* Khi hover vào emoji, emoji sẽ phóng to */
+}

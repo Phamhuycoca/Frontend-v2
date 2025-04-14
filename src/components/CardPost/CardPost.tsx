@@ -4,7 +4,7 @@ import {
     BellOutlined,
     CloseCircleOutlined,
     EllipsisOutlined,
-    LikeOutlined,
+    // LikeOutlined,
     MessageOutlined,
     SaveOutlined,
     SendOutlined,
@@ -17,6 +17,7 @@ import ImageGrid from '../ImageGrid/ImageGrid';
 import UploadTextArea from './UploadTextArea';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import LikeButton from '../Button/LikeButton';
 type PostType = {
     id: string;
     user: {
@@ -179,7 +180,7 @@ const CardPost: React.FC<{ post: PostType }> = ({ post }) => {
                 <ImageGrid images={post.images} />
                 <Row justify="space-around" className={cx('mt-4')}>
                     <span className={cx(styles.actions)}>
-                        <LikeOutlined /> 140 Likes
+                        <LikeButton />
                     </span>
                     <span onClick={handlerComment} className={cx(styles.actions)}>
                         <MessageOutlined /> 20 Comment
