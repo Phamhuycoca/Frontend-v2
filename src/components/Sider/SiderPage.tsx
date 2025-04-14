@@ -7,16 +7,11 @@ const { Sider } = Layout;
 
 const siderStyle: React.CSSProperties = {
     position: 'fixed',
-    insetInlineStart: 0,
     top: '80px',
     bottom: 0,
     scrollbarWidth: 'thin',
     scrollbarGutter: 'stable',
-    height:'100vh',
-    maxHeight:'100vh',
-    width:'100%',
-    maxWidth:'100%',
-    zIndex: 100,
+    height: '90vh',
 
 };
 const SiderPage: React.FC = () => {

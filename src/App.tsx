@@ -9,7 +9,6 @@ import { PrivateRoute } from './routers/RouteProtected';
 import { Suspense, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { Spin } from 'antd';
 
 function App() {
     useEffect(() => {
@@ -24,24 +23,6 @@ function App() {
                 <AuthProvider>
                     <BrowserRouter>
                         <Suspense
-                            fallback={
-                                <div
-                                    style={{
-                                        position: 'fixed',
-                                        top: 0,
-                                        left: 0,
-                                        width: '100vw',
-                                        height: '100vh',
-                                        backgroundColor: 'rgba(255, 255, 255, 0.8)',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        zIndex: 9999,
-                                    }}
-                                >
-                                    <Spin size="large" />
-                                </div>
-                            }
                         >
                             <Routes>
                                 {RouteIndex.map((router) => (

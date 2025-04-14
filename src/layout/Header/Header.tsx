@@ -1,5 +1,5 @@
 import { Avatar, Col, Dropdown, Image, Input, Layout, Row, Space } from 'antd';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './../../assets/logo.png';
 import type { MenuProps } from 'antd';
 import {
@@ -46,17 +46,29 @@ const HeaderPage: React.FC = () => {
     const onClick = () => {
         dispatch(setOpen(open));
     };
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 0);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
         <>
             <Header
                 style={{
                     padding: 0,
-                    position: 'sticky',
+                    position: 'fixed',
                     top: 0,
-                    zIndex: 100,
+                    zIndex: 104,
                     height: '80px',
                     width: '100%',
                     backgroundColor: 'white',
+                    boxShadow: isScrolled ? '0 2px 8px rgba(0, 0, 0, 0.15)' : 'none',
                 }}
             >
                 <Row

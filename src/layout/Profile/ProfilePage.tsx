@@ -11,6 +11,7 @@ import {
     SettingOutlined,
 } from '@ant-design/icons';
 import { createStyles } from 'antd-style';
+import TimelinePage from './Timeline/TimelinePage';
 const { Title, Text } = Typography;
 const useStyles = createStyles(({ css }) => ({
     tabswrap: css`
@@ -70,10 +71,9 @@ const useStyles = createStyles(({ css }) => ({
         }
 
         .ant-tabs-content-holder {
-            margin-top: 8px;
-            background-color: white;
+            margin-top: 10px;
+            background-color: transparent !important;
             border-radius: 8px;
-            padding: 16px;
         }
     `,
 }));
@@ -165,7 +165,7 @@ const ProfilePage: React.FC = () => {
                         {
                             key: '1',
                             label: 'Timeline',
-                            children: 'Nội dung Timeline',
+                            children: <TimelinePage/>
                         },
                         {
                             key: '2',

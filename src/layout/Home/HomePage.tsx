@@ -11,9 +11,10 @@ const homePage: React.FC = () => {
         <>
             <Layout style={{ minHeight: '100vh', height: '100%' }}>
                 <HeaderPage />
-                <Layout>
+                <Layout style={{minHeight: '100vh', height: '100%'
+                 }} hasSider>
                     <SiderPage />
-                    <Content style={{ padding: '0 24px' }}>
+                    <Content style={{ padding: '0 24px',minHeight: '100vh', height: '100%' }}>
                         <Row style={{ minHeight: '100vh', height: '100%' }}>
                             <Col span={4}></Col>
                             <Col span={16}>
