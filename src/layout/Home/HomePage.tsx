@@ -9,7 +9,7 @@ const { Content } = Layout;
 const homePage: React.FC = () => {
     return (
         <>
-            <Layout style={{ minHeight: '100vh', height: '100%' }}>
+            <Layout style={{ minHeight: '100vh', height: '100%',backgroundColor:'none' }}>
                 <HeaderPage />
                 <Layout style={{minHeight: '100vh', height: '100%'
                  }} hasSider>

@@ -64,7 +64,7 @@ const HeaderPage: React.FC = () => {
                     padding: 0,
                     position: 'fixed',
                     top: 0,
-                    zIndex: 104,
+                    zIndex: 100,
                     height: '80px',
                     width: '100%',
                     backgroundColor: 'white',

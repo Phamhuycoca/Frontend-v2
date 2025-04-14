@@ -27,6 +27,7 @@ const siderStyle: React.CSSProperties = {
     scrollbarWidth: 'thin',
     scrollbarGutter: 'stable',
     height: '90vh',
+    boxShadow: '-4px 0 6px rgba(134, 134, 134, 0.1)',
 };
 const FriendPage = () => {
     const [collapsed, setCollapsed] = useState(false);

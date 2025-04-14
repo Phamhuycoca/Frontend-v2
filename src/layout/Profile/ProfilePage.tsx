@@ -83,108 +83,108 @@ const ProfilePage: React.FC = () => {
 
     return (
         <>
-            <Card
-                style={{
-                    padding: 0,
-                    overflow: 'hidden',
-                    borderRadius: '10px',
-                }}
-                styles={{
-                    body: {
-                        padding: 0,
-                    },
-                }}
-            >
-                <div
+                <Card
                     style={{
-                        backgroundImage: `url(https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463024/Snapins.ai_489578285_17944006325971869_9001034676423594288_n_1024_dgcx2d.jpg)`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        height: 200,
-                        position: 'relative',
+                        padding: 0,
+                        overflow: 'hidden',
+                        borderRadius: '10px',
+                    }}
+                    styles={{
+                        body: {
+                            padding: 0,
+                        },
                     }}
                 >
-                    <Avatar
-                        size={100}
-                        src="https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463633/490011465_17899777956172253_3024570406282557719_n_nxqjl4.jpg"
+                    <div
                         style={{
-                            position: 'absolute',
-                            bottom: -50,
-                            left: '50%',
-                            transform: 'translateX(-50%)',
-                            border: '4px solid white',
+                            backgroundImage: `url(https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463024/Snapins.ai_489578285_17944006325971869_9001034676423594288_n_1024_dgcx2d.jpg)`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            height: 200,
+                            position: 'relative',
                         }}
+                    >
+                        <Avatar
+                            size={100}
+                            src="https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463633/490011465_17899777956172253_3024570406282557719_n_nxqjl4.jpg"
+                            style={{
+                                position: 'absolute',
+                                bottom: -50,
+                                left: '50%',
+                                transform: 'translateX(-50%)',
+                                border: '4px solid white',
+                            }}
+                        />
+                    </div>
+                    <div style={{ paddingTop: 60, textAlign: 'center', paddingBottom: 20 }}>
+                        <Row justify={'space-between'} align={'middle'}>
+                            <Col span={8}>
+                                <Space size="middle">
+                                    <FacebookFilled style={{ fontSize: 24, color: '#3b5998' }} />
+                                    <TwitterOutlined style={{ fontSize: 24, color: '#1DA1F2' }} />
+                                    <InstagramOutlined style={{ fontSize: 24, color: '#C13584' }} />
+                                    <GooglePlusOutlined style={{ fontSize: 24, color: '#db4437' }} />
+                                    <YoutubeOutlined style={{ fontSize: 24, color: '#FF0000' }} />
+                                    <LinkedinOutlined style={{ fontSize: 24, color: '#0077b5' }} />
+                                </Space>
+                            </Col>
+                            <Col span={8}>
+                                <Title level={4}>Bni Cyst</Title>
+                            </Col>
+                            <Col span={8}>
+                                <Space size="large">
+                                    <div>
+                                        <Text strong>Posts</Text>
+                                        <div>690</div>
+                                    </div>
+                                    <div>
+                                        <Text strong>Followers</Text>
+                                        <div>206</div>
+                                    </div>
+                                    <div>
+                                        <Text strong>Following</Text>
+                                        <div>100</div>
+                                    </div>
+                                </Space>
+                            </Col>
+                        </Row>
+                        <div style={{ position: 'absolute', top: 160, right: 30 }}>
+                            <Space>
+                                <Button shape="circle" icon={<EditOutlined />} />
+                                <Button shape="circle" icon={<SettingOutlined />} />
+                            </Space>
+                        </div>
+                    </div>
+                </Card>
+                <div style={{ width: '100%', minHeight: '100vh' }} className="mt-4">
+                    <Tabs
+                        defaultActiveKey="1"
+                        type="card"
+                        className={cx(styles.tabswrap)}
+                        items={[
+                            {
+                                key: '1',
+                                label: 'Timeline',
+                                children: <TimelinePage />,
+                            },
+                            {
+                                key: '2',
+                                label: 'About',
+                                children: 'Nội dung About',
+                            },
+                            {
+                                key: '3',
+                                label: 'Friends',
+                                children: 'Danh sách bạn bè',
+                            },
+                            {
+                                key: '4',
+                                label: 'Photos',
+                                children: 'Album ảnh',
+                            },
+                        ]}
                     />
                 </div>
-                <div style={{ paddingTop: 60, textAlign: 'center', paddingBottom: 20 }}>
-                    <Row justify={'space-between'} align={'middle'}>
-                        <Col span={8}>
-                            <Space size="middle">
-                                <FacebookFilled style={{ fontSize: 24, color: '#3b5998' }} />
-                                <TwitterOutlined style={{ fontSize: 24, color: '#1DA1F2' }} />
-                                <InstagramOutlined style={{ fontSize: 24, color: '#C13584' }} />
-                                <GooglePlusOutlined style={{ fontSize: 24, color: '#db4437' }} />
-                                <YoutubeOutlined style={{ fontSize: 24, color: '#FF0000' }} />
-                                <LinkedinOutlined style={{ fontSize: 24, color: '#0077b5' }} />
-                            </Space>
-                        </Col>
-                        <Col span={8}>
-                            <Title level={4}>Bni Cyst</Title>
-                        </Col>
-                        <Col span={8}>
-                            <Space size="large">
-                                <div>
-                                    <Text strong>Posts</Text>
-                                    <div>690</div>
-                                </div>
-                                <div>
-                                    <Text strong>Followers</Text>
-                                    <div>206</div>
-                                </div>
-                                <div>
-                                    <Text strong>Following</Text>
-                                    <div>100</div>
-                                </div>
-                            </Space>
-                        </Col>
-                    </Row>
-                    <div style={{ position: 'absolute', top: 160, right: 30 }}>
-                        <Space>
-                            <Button shape="circle" icon={<EditOutlined />} />
-                            <Button shape="circle" icon={<SettingOutlined />} />
-                        </Space>
-                    </div>
-                </div>
-            </Card>
-            <div style={{ width: '100%' }} className="mt-4">
-                <Tabs
-                    defaultActiveKey="1"
-                    type="card"
-                    className={cx(styles.tabswrap)}
-                    items={[
-                        {
-                            key: '1',
-                            label: 'Timeline',
-                            children: <TimelinePage/>
-                        },
-                        {
-                            key: '2',
-                            label: 'About',
-                            children: 'Nội dung About',
-                        },
-                        {
-                            key: '3',
-                            label: 'Friends',
-                            children: 'Danh sách bạn bè',
-                        },
-                        {
-                            key: '4',
-                            label: 'Photos',
-                            children: 'Album ảnh',
-                        },
-                    ]}
-                />
-            </div>
         </>
     );
 };

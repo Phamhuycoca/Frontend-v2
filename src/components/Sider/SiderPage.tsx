@@ -11,7 +11,10 @@ const siderStyle: React.CSSProperties = {
     bottom: 0,
     scrollbarWidth: 'thin',
     scrollbarGutter: 'stable',
-    height: '90vh',
+    height: '100%',
+    maxHeight:'100vh',
+    zIndex:100,
+    boxShadow: '4px 0 6px rgba(134, 134, 134, 0.1)', // Bóng đổ bên phải
 
 };
 const SiderPage: React.FC = () => {
