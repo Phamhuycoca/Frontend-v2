@@ -13,7 +13,7 @@ const siderStyle: React.CSSProperties = {
     scrollbarGutter: 'stable',
     height: '100%',
     maxHeight:'100vh',
-    zIndex:100,
+    zIndex:10,
     boxShadow: '4px 0 6px rgba(134, 134, 134, 0.1)', // Bóng đổ bên phải
 
 };
