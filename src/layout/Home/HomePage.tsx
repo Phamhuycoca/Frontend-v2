@@ -3,7 +3,7 @@ import HeaderPage from '../Header/Header';
 import { Col, Layout, Row } from 'antd';
 import Rootpage from './../../pages/pageRoot';
 // import FooterPage from './FooterPage';
-import { FriendPage, ScrollToTopButton, SiderPage } from '../../components';
+import { BottomTabs, FriendPage, ScrollToTopButton, SiderPage } from '../../components';
 const { Content } = Layout;
 
 const homePage: React.FC = () => {
@@ -24,6 +24,7 @@ const homePage: React.FC = () => {
                                 <FriendPage />
                             </Col>
                         </Row>
+                        <BottomTabs/>
                         <ScrollToTopButton />
                     </Content>
                 </Layout>

@@ -29,6 +29,7 @@ const siderStyle: React.CSSProperties = {
     height: '100%',
     maxHeight:'100vh',
     boxShadow: '-4px 0 6px rgba(134, 134, 134, 0.1)',
+    zIndex:10
 };
 const FriendPage = () => {
     const [collapsed, setCollapsed] = useState(false);
