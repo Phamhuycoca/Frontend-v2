@@ -1,9 +1,12 @@
 import { Avatar, Badge, Divider, Layout, List, Row, Skeleton } from 'antd';
 import React, { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../stores/store';
+import { addUser } from '../../stores/reducers/listchat.slice';
 const { Sider } = Layout;
 
-interface DataType {
+export interface DataType {
     gender: string;
     name: {
         title: string;
@@ -27,11 +30,15 @@ const siderStyle: React.CSSProperties = {
     scrollbarWidth: 'thin',
     scrollbarGutter: 'stable',
     height: '100%',
-    maxHeight:'100vh',
+    maxHeight: '100vh',
     boxShadow: '-4px 0 6px rgba(134, 134, 134, 0.1)',
-    zIndex:10
+    zIndex: 10,
 };
 const FriendPage = () => {
+    const list = useSelector((state: RootState) => state.chatList);
+    console.log('list',list);
+    
+    const dispatch=useDispatch();
     const [collapsed, setCollapsed] = useState(false);
     useEffect(() => {
         setCollapsed(false);
@@ -122,9 +129,15 @@ const FriendPage = () => {
                             scrollableTarget="scrollableDiv"
                         >
                             <List
+                                style={{ cursor: 'pointer' }}
                                 dataSource={data}
                                 renderItem={(item) => (
-                                    <List.Item key={item.email}>
+                                    <List.Item
+                                        key={item.email}
+                                        onClick={() => {
+                                            dispatch(addUser(item))
+                                        }}
+                                    >
                                         <List.Item.Meta
                                             avatar={
                                                 <Badge dot color="green">
