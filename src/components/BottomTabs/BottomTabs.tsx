@@ -35,6 +35,9 @@ const BottomTabs: React.FC = () => {
         <>
             {listInLast.length > 0 && (
                 <FloatButton.Group
+                badge={{
+                    count:listInLast.length
+                }}
                     closeIcon={<CloseOutlined />}
                     style={{
                         position: 'fixed',
