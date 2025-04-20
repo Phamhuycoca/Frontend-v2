@@ -68,7 +68,7 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
                 ) : (
                     <>
                         {remainingImages.map((img, idx) => (
-                            <Image preview={false} key={idx} src={img} alt={`extra-${idx}`} className="mb-2" />
+                            <Image key={idx} src={img} alt={`extra-${idx}`} className="mb-2" />
                         ))}
                     </>
                 )}

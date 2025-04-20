@@ -94,7 +94,7 @@ const BottomTabs: React.FC = () => {
             )}
             <div
                 style={{
-                    height: 400,
+                    height: 450,
                     zIndex: 20,
                     position: 'fixed',
                     bottom: 0,
