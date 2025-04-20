@@ -5,6 +5,10 @@ import CardPost from '../CardPost/CardPost';
 import { Skeleton } from 'antd';
 
 const fakeImages = [
+    'https://res.cloudinary.com/drhdgw1xx/image/upload/v1745137618/Glrv6U-WYAEtwIa_ptzf4d.jpg',
+    'https://res.cloudinary.com/drhdgw1xx/image/upload/v1745137618/GotXbI7awAAXXkI_shtva1.jpg',
+    'https://res.cloudinary.com/drhdgw1xx/image/upload/v1745137619/GlwaehWagAApiv7_c3clmt.jpg',
+    'https://res.cloudinary.com/drhdgw1xx/image/upload/v1745138883/481079400_17968291949844481_2947456280125703003_n_sfilar.jpg',
     'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744389533/485035891_1112428667302468_7524161883491890393_n_dhwogd.jpg',
     'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744389531/484629919_1112428663969135_8561795339182956993_n_df5m9x.jpg',
     'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463633/490011465_17899777956172253_3024570406282557719_n_nxqjl4.jpg',
