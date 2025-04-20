@@ -33,13 +33,6 @@ const LikeButton: React.FC = () => {
             onMouseEnter={() => setShowReactions(true)}
             onMouseLeave={() => setShowReactions(false)}
         >
-            <div className="like-button">
-                <LikeOutlined style={{ color: '#1877F2' }} />
-                <span style={{ marginLeft: 4 }}>
-                    {selectedReaction ? `${likesCount} ${selectedReaction.charAt(0).toUpperCase() + selectedReaction.slice(1)}s` : `${likesCount} Likes`}
-                </span>
-            </div>
-
             {/* Hiển thị các emoji khi hover */}
             {showReactions && (
                 <div className={`reaction-popup ${showReactions ? 'show' : ''}`}>
@@ -54,6 +47,14 @@ const LikeButton: React.FC = () => {
                     ))}
                 </div>
             )}
+            <div className="like-button">
+                <LikeOutlined style={{ color: '#1877F2' }} />
+                <span style={{ marginLeft: 4 }}>
+                    {selectedReaction
+                        ? `${likesCount} ${selectedReaction.charAt(0).toUpperCase() + selectedReaction.slice(1)}`
+                        : `${likesCount} Likes`}
+                </span>
+            </div>
         </div>
     );
 };

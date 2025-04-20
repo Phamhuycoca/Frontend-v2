@@ -41,7 +41,7 @@ const FriendPage = () => {
     const dispatch=useDispatch();
     const [collapsed, setCollapsed] = useState(false);
     useEffect(() => {
-        setCollapsed(false);
+        setCollapsed(!false);
     }, []);
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState<DataType[]>([]);
@@ -68,7 +68,10 @@ const FriendPage = () => {
 
     return (
         <>
-            <Row justify={'end'} className="mt-2">
+            <Row justify={'end'} className="mt-2"
+            style={{
+                cursor:'pointer'
+            }}>
                 <Sider
                     reverseArrow={false}
                     width={260}
@@ -129,7 +132,6 @@ const FriendPage = () => {
                             scrollableTarget="scrollableDiv"
                         >
                             <List
-                                style={{ cursor: 'pointer' }}
                                 dataSource={data}
                                 renderItem={(item) => (
                                     <List.Item

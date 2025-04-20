@@ -14,6 +14,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setOpen } from '../../stores/reducers/sider.slice';
 import { Link } from 'react-router-dom';
 import UserHeader from './User/UserHeader';
+import { RootState } from '../../stores/store';
+import SearchHistory from './History/SearchHistory';
+import { addHistorySearch, removeHistorySearch } from '../../stores/reducers/historysearch.slice';
+import { AnimatePresence,motion } from 'framer-motion';
 const { Header } = Layout;
 const items: MenuProps['items'] = [
     {
@@ -41,11 +45,15 @@ const items: MenuProps['items'] = [
     },
 ];
 const HeaderPage: React.FC = () => {
+    const list = useSelector((state: RootState) => state.historySearch);
     const dispatch = useDispatch();
+    const [inputValue, setInputValue] = useState('');
+    const [showhistory, setShowHistory] = useState(false);
     const open = useSelector((state: any) => state.sider.open);
     const onClick = () => {
         dispatch(setOpen(open));
     };
+
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
@@ -56,7 +64,29 @@ const HeaderPage: React.FC = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        const date = new Date();
+        
+        dispatch(
+            addHistorySearch({
 
+                title: e.currentTarget.value,
+                time: date.toDateString(),
+            }),
+        );
+        setInputValue('');
+    };
+    const handleFocus = () => {
+        setShowHistory(true);
+    };
+    const handleBlur = () => {
+        setTimeout(() => setShowHistory(false), 150);
+    };
+    const handleRemoveHistory = (id: number | undefined) => {
+        if (id !== undefined) {
+            dispatch(removeHistorySearch(id));
+        }
+    };
     return (
         <>
             <Header
@@ -113,7 +143,48 @@ const HeaderPage: React.FC = () => {
                                         outline: 'none',
                                         resize: 'none',
                                     }}
+                                    onChange={(e) => setInputValue(e.target.value)}
+                                   value={inputValue}
+                                    onFocus={handleFocus}
+                                    onPressEnter={handleKeyPress}
+                                    onBlur={handleBlur}
                                 />
+                                {list.length > 0 && showhistory && (
+                                    // <div
+                                    //     style={{
+                                    //         zIndex: 150,
+                                    //         position: 'fixed',
+                                    //         width: '24.5%',
+                                    //         backgroundColor: 'white',
+                                    //         padding: 10,
+                                    //         boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+                                    //         borderRadius: 5,
+                                    //     }}
+                                    // >
+                                    //     <SearchHistory />
+                                    // </div>
+                                    <AnimatePresence>
+                                        <motion.div
+                                            initial={{ opacity: 0, y: -10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            exit={{ opacity: 0, y: -10 }}
+                                            transition={{ duration: 0.2 }}
+                                            style={{
+                                                zIndex: 150,
+                                                position: 'fixed',
+                                                width: '24.3%',
+                                                backgroundColor: 'white',
+                                                padding: 10,
+                                                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
+                                                borderRadius: 5,
+                                            }}
+                                        >
+                                            <SearchHistory historyList={list} deleteHistory={
+                                                handleRemoveHistory
+                                            }/>
+                                        </motion.div>
+                                    </AnimatePresence>
+                                )}
                             </Col>
                         </Row>
                     </Col>

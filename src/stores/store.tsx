@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import storeSider from './reducers/sider.slice';
 import storeListChat from './reducers/listchat.slice'
+import storeHistorySearch from './reducers/historysearch.slice';
 export const store = configureStore({
   reducer: {
     sider:storeSider,
-    chatList:storeListChat
+    chatList:storeListChat,
+    historySearch:storeHistorySearch
   },
 });
 
