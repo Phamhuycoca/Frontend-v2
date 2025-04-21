@@ -3,7 +3,6 @@ import { Avatar, Button, Card, Col, Input, List, Row, Skeleton } from 'antd';
 import { removeUserByEmail, User } from '../../stores/reducers/listchat.slice';
 import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
-import VirtualList from 'rc-virtual-list';
 interface DataType {
     fromMe?: boolean;
     gender?: string;
@@ -33,8 +32,6 @@ type UserProp = {
 const ChatBox: React.FC<UserProp> = ({ user }) => {
     const dispatch = useDispatch();
     const [initLoading, setInitLoading] = useState(true);
-    const [loading, setLoading] = useState(false);
-    const [data, setData] = useState<DataType[]>([]);
     const [list, setList] = useState<DataType[]>([]);
     const [message, setMessage] = useState('');
 
@@ -49,30 +46,11 @@ const ChatBox: React.FC<UserProp> = ({ user }) => {
                     content: index % 2 === 0 ? 'Xin chào bạn!' : 'Ant Design là thư viện UI tuyệt vời!',
                 }));
                 setInitLoading(false);
-                setData(updatedData);
                 setList(updatedData);
             });
     }, []);
 
-    const onLoadMore = () => {
-        setLoading(true);
-        setList(data.concat(Array.from({ length: count }).map(() => ({ loading: true, name: {}, picture: {} }))));
-        fetch(fakeDataUrl)
-            .then((res) => res.json())
-            .then((res) => {
-                const newItems = res.results.map((item: DataType, index: number) => ({
-                    ...item,
-                    loading: false,
-                    fromMe: index % 2 === 0,
-                    content: index % 2 === 0 ? 'Bạn đang gửi tin nhắn.' : 'Đây là phản hồi từ người khác.',
-                }));
-                const newData = data.concat(newItems);
-                setData(newData);
-                setList(newData);
-                setLoading(false);
-                window.dispatchEvent(new Event('resize'));
-            });
-    };
+
 
     const onSend = () => {
         if (!message.trim()) return;
@@ -88,19 +66,7 @@ const ChatBox: React.FC<UserProp> = ({ user }) => {
         setMessage('');
     };
 
-    const loadMore =
-        !initLoading && !loading ? (
-            <div
-                style={{
-                    textAlign: 'center',
-                    marginTop: 12,
-                    height: 32,
-                    lineHeight: '32px',
-                }}
-            >
-                <Button onClick={onLoadMore}>Tải thêm</Button>
-            </div>
-        ) : null;
+ 
 
     return (
         <Card
