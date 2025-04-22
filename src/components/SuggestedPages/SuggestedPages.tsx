@@ -29,21 +29,24 @@ const stories: BirthdayItem[] = [
         name: 'Paul Molive',
         time: 'Tomorrow',
         avatar: 'https://cdn-icons-png.flaticon.com/512/616/616408.png',
-        image: 'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463017/Snapins.ai_451303216_7870709326341783_3616255518987744697_n_1080_ksv9qa.jpg',
+        image: '',
+        // image: 'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463017/Snapins.ai_451303216_7870709326341783_3616255518987744697_n_1080_ksv9qa.jpg',
     },
     {
         id: 2,
         name: 'Anna Sthesia',
         time: 'Today',
         avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
-        image: 'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463024/Snapins.ai_489828232_17944006352971869_5882687136292615004_n_1024_xtltif.jpg',
+        image: '',
+        // image: 'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463024/Snapins.ai_489828232_17944006352971869_5882687136292615004_n_1024_xtltif.jpg',
     },
     {
         id: 3,
         name: 'Paul Molive',
         time: 'Tomorrow',
         avatar: 'https://cdn-icons-png.flaticon.com/512/616/616408.png',
-        image: 'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463017/Snapins.ai_451303216_7870709326341783_3616255518987744697_n_1080_ksv9qa.jpg',
+        image: '',
+        //image: 'https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463017/Snapins.ai_451303216_7870709326341783_3616255518987744697_n_1080_ksv9qa.jpg',
     },
 ];
 

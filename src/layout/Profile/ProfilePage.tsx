@@ -102,7 +102,8 @@ const ProfilePage: React.FC = () => {
             >
                 <div
                     style={{
-                        backgroundImage: `url(https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463024/Snapins.ai_489578285_17944006325971869_9001034676423594288_n_1024_dgcx2d.jpg)`,
+                        backgroundImage: `url()`,
+                        // backgroundImage: `url(https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463024/Snapins.ai_489578285_17944006325971869_9001034676423594288_n_1024_dgcx2d.jpg)`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         height: 200,
@@ -111,7 +112,8 @@ const ProfilePage: React.FC = () => {
                 >
                     <Avatar
                         size={100}
-                        src="https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463633/490011465_17899777956172253_3024570406282557719_n_nxqjl4.jpg"
+                        src=""
+                        // src="https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463633/490011465_17899777956172253_3024570406282557719_n_nxqjl4.jpg"
                         style={{
                             position: 'absolute',
                             bottom: -50,

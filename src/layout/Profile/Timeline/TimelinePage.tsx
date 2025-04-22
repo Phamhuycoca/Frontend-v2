@@ -58,7 +58,8 @@ const TimelinePage: React.FC = () => {
                                             style={{
                                                 borderRadius: '10px',
                                                 alignContent: 'center',
-                                                backgroundImage: `url(https://templates.iqonic.design/product/lite/socialv/html/dist/assets/images/page-img/07.jpg)`,
+                                                backgroundImage: `url(')`,
+                                                // backgroundImage: `url(https://templates.iqonic.design/product/lite/socialv/html/dist/assets/images/page-img/07.jpg)`,
                                                 backgroundSize: 'cover',
                                                 backgroundPosition: 'center',
                                                 height: 200,
@@ -68,7 +69,8 @@ const TimelinePage: React.FC = () => {
                                         >
                                             <Avatar
                                                 size={50}
-                                                src="https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463633/490011465_17899777956172253_3024570406282557719_n_nxqjl4.jpg"
+                                                src=""
+                                                // src="https://res.cloudinary.com/drhdgw1xx/image/upload/v1744463633/490011465_17899777956172253_3024570406282557719_n_nxqjl4.jpg"
                                                 style={{
                                                     position: 'absolute',
                                                     bottom: -35,
@@ -112,7 +114,8 @@ const TimelinePage: React.FC = () => {
                                         preview={false}
                                         width={'100%'}
                                         height={100}
-                                        src="https://res.cloudinary.com/drhdgw1xx/image/upload/v1744389574/476037729_1302573824125008_4017964540772625941_n_jqx9mr.jpg"
+                                        src=""
+                                        // src="https://res.cloudinary.com/drhdgw1xx/image/upload/v1744389574/476037729_1302573824125008_4017964540772625941_n_jqx9mr.jpg"
                                     />
                                 </Col>
                             ))}
@@ -144,7 +147,8 @@ const TimelinePage: React.FC = () => {
                                             preview={false}
                                             width={'100%'}
                                             height={100}
-                                            src="https://res.cloudinary.com/drhdgw1xx/image/upload/v1744389574/476037729_1302573824125008_4017964540772625941_n_jqx9mr.jpg"
+                                            src=""
+                                            // src="https://res.cloudinary.com/drhdgw1xx/image/upload/v1744389574/476037729_1302573824125008_4017964540772625941_n_jqx9mr.jpg"
                                         />
                                         <span className="mt-1">Anna Rexia</span>
                                     </Row>

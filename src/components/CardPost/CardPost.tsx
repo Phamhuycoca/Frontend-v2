@@ -22,10 +22,10 @@ type PostType = {
     id: string;
     user: {
         name: string;
-        avatar: string;
+        avatar?: string;
     };
     content: string;
-    images: string[];
+    images?: string[];
     createdAt: string;
 };
 

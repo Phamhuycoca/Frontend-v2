@@ -3,17 +3,17 @@ import './ImageGrid.scss';
 import { Image, Modal } from 'antd';
 import VideoPlayer from '../VideoJS/VideoPlayer';
 interface ImageGridProps {
-    images: string[];
+    images?: string[];
 }
 
 const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const displayedImages = images.slice(0, 4);
-    const remainingCount = images.length - 4;
+    const displayedImages = images?.slice(0, 4);
+    const remainingCount = images !=undefined ? images?.length- 4 : 0;
     const remainingImages = images;
     const [image, setImage] = useState<string>('');
     const getGridClass = () => {
-        switch (displayedImages.length) {
+        switch (displayedImages?.length) {
             case 1:
                 return 'grid-one';
             case 2:
@@ -34,7 +34,7 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
     return (
         <>
             <div className={`image-grid ${getGridClass()}`}>
-                {displayedImages.map((img, index) => (
+                {displayedImages?.map((img, index) => (
                     <div key={index} className="image-wrapper">
                         {img.includes('.mp4') ? (
                             <>
@@ -67,7 +67,7 @@ const ImageGrid: React.FC<ImageGridProps> = ({ images }) => {
                     <Image src={image} className="mb-2" />
                 ) : (
                     <>
-                        {remainingImages.map((img, idx) => (
+                        {remainingImages?.map((img, idx) => (
                             <Image key={idx} src={img} alt={`extra-${idx}`} className="mb-2" />
                         ))}
                     </>
