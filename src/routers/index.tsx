@@ -1,9 +1,11 @@
 import { RouteConfig } from '../common/interface';
+import { AdminLayout } from '../layout/Admin_Layout';
 import { HomePage } from '../layout/Home';
 import { LoginPage } from '../layout/Login';
 import { MainPage } from '../layout/Main';
 import { ProfilePage } from '../layout/Profile';
 import { RegisterPage } from '../layout/Register';
+import { CategoryPage } from '../modules/sys_category';
 import { Notfound } from '../pages';
 
 const RouteIndex: RouteConfig[] = [
@@ -20,6 +22,16 @@ const RouteIndex: RouteConfig[] = [
                 element: <ProfilePage />,
             },
         ],
+    },
+    {
+        path:'/admin',
+        element:<AdminLayout/>,
+        children:[
+            {
+                path:'sys_category',
+                element:<CategoryPage/>
+            }
+        ]
     },
     {
         path: '/login',
