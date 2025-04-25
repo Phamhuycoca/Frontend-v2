@@ -2,7 +2,7 @@ import React from "react";
 import { HomeOutlined } from "@ant-design/icons";
 import { Breadcrumb } from "antd";
 import { useLocation, Link } from "react-router-dom";
-import { PathTileAdmin } from "../../common/interface";
+import { PathTileAdmin } from "../../common/Constants";
 
 interface PageHeaderProps {
   customTitles?: { [key: string]: string }; // Tùy chỉnh tiêu đề breadcrumb
