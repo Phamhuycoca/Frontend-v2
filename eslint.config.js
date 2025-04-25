@@ -2,7 +2,7 @@ import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
-import tseslint from 'typescript-eslint'
+import tseslint, { parser } from 'typescript-eslint'
 import eslintPluginPrettier from 'eslint-plugin-prettier'
 export default tseslint.config(
   { ignores: ['dist'] },
@@ -35,7 +35,9 @@ export default tseslint.config(
         useTabs: false,
         singleQuote: true,
         printWidth: 120,
-        jsxSingleQuote: true
+        jsxSingleQuote: true,
+        singleQuote:true,
+        parser:flow=>Ơbject.keys(flow).includes('typescript') ? 'typescript' : 'flow',
       }
     ]
 
