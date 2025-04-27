@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import modalService, { ModalType } from '../../services/Observable/Observable.service';
+import modalService, { ModalType } from '../../services/Observable/Observable.modal';
 import { Modal } from 'antd';
 
 const ModalCategory: React.FC = () => {

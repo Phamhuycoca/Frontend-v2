@@ -75,7 +75,7 @@ import 'tinymce/plugins/visualchars';
 import 'tinymce/plugins/preview';
 import 'tinymce/plugins/table';
 import { Editor } from "@tinymce/tinymce-react";
-import { useRef } from "react";
+import { forwardRef, useImperativeHandle, useRef } from "react";
 import dompurify from "dompurify";
 
 
@@ -85,8 +85,10 @@ interface Props {
   value?: string;
 }
 
-const RichText: React.FC<Props> = ({ disabled = false, onChange, value = "" }) => {
+const RichText = forwardRef<any, Props>(({ disabled = false, onChange, value = "" }, ref) => {
   const editorRef = useRef<any>(null);
+
+  useImperativeHandle(ref, () => editorRef.current);
   if (disabled) {
     return (
       <div className="max-h-[500px] min-h-[100px]">
@@ -122,5 +124,5 @@ const RichText: React.FC<Props> = ({ disabled = false, onChange, value = "" }) =
       />
     );
   }
-};
+});
 export default RichText;
